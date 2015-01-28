@@ -1,12 +1,12 @@
 # dscr-example
 
 This is a simple example of a repository for a dynamic statistical comparison (DSC) using the `dscr` R package.
-It was made using the repo [`dscr-template`](github.com/stephens999/dscr-template) as a template, and you can see more
+It was made using the repo [`dscr-template`](https://github.com/stephens999/dscr-template) as a template, and you can see more
 instructions on how to proceed there.
 
 # Background 
 
-For a general introduction to DSCs, see [here](http://github.com/stephens999/dscr/blob/master/intro.md).
+For a general introduction to DSCs, see [here](https://github.com/stephens999/dscr/blob/master/intro.md).
 
 The aim of this example DSC is to compare methods for estimating the mean (or perhaps the median) of a distribution f
 from a random sample of independent and identically distributed samples from f.
