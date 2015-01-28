@@ -32,18 +32,21 @@ See [score.R](score.R).
 # To add a method
 
 To add a method there are two steps.
+
 i) add a `.R` file containing an R function implenting that method to the `methods/` subdirectory
 ii) add the method to the list of methods in the `methods.R` file.
 
-Note that the method function must take arguments `(input,args)` where `input` is a list with the correct format (defined above), and `args` is a list containing any additional arguments the method requires.
+Each method function must take arguments `(input,args)` where `input` is a list with the correct format (defined above), and `args` is a list containing any additional arguments the method requires.
 
 Each method function must return `output`, where `output` is a list with the correct format (defined above).
 
 # To add a scenario
 
 To add a scenario there are two steps, the first of which can be skipped if you are using an existing datamaker function
+
 i) add a `.R` file containing an R function implenting a datamaker to the `datamakers/` subdirectory
 ii) add the scenario to the list of scenarios in the `scenarios.R` file.
+
 Each datamaker function must return a `list(meta,input)` where `meta` and `input` are each lists with the correct format
 (defined above).
 
