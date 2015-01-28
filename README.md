@@ -1,8 +1,8 @@
 # dscr-example
 
 This is a simple example of a repository for a dynamic statistical comparison (DSC) using the `dscr` R package.
-It was made using the repo [`dscr-template`](https://github.com/stephens999/dscr-template) as a template, and you can see more
-instructions on how to proceed there.
+It was made using the repo [`dscr-template`](https://github.com/stephens999/dscr-template) as a template. If you want
+to make your own DSC you can find more instructions on how to proceed there.
 
 # Background 
 
