@@ -1,0 +1,6 @@
+.RData
+.Rhistory
+output/
+data/
+results/
+res.RData
