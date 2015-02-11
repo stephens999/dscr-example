@@ -1,13 +1,55 @@
-# dscr-template
-a template repository for a dynamic statistical comparison
+# dscr-example
 
-# How to use this to set up a new DSC
+This is a simple example of a repository for a dynamic statistical comparison (DSC) using the `dscr` R package.
+It was made using the repo [`dscr-template`](https://github.com/stephens999/dscr-template) as a template. If you want
+to make your own DSC you can find more instructions on how to proceed there.
 
-1. Clone this repo.
-2. Put at least one datamaker function in a .R file in the datamakers directory (all .R files in this directory will be sourced before scenarios.R). See the file datamakers/eg_datamaker.R for example.
-3. Put at least one method function in a .R file in the methods directory (all .R files in this directory will be sourced before methods.R). See the file methods/eg_method.R
-4. edit the file scenarios.R to define your scenarios 
-5. edit the file methods.R to define your methods
-6. edit the file score.R to define your scoring function
-7. replace the text in this README.md file with a description of the DSC. Include background, and definitions of the structure of the objects 'meta', 'input', and 'output' that is used by your DSC.
-8. Run your DSC by running 'source("run_dsc.R")' in R. [Make sure you have installed the 'dscr' package first!]
+# Background 
+
+For a general introduction to DSCs, see [here](https://github.com/stephens999/dscr/blob/master/intro.md).
+
+The aim of this example DSC is to compare methods for estimating the mean (or perhaps the median) of a distribution f
+from a random sample of independent and identically distributed samples from f.
+It is intended to illustrate the idea of a DSC and use of the dscr package, and not a serious attempt to 
+compare methods for this problem.
+
+# Input, meta and output formats
+
+This DSC uses the following formats:
+
+`input: list(x=numeric vector)` #x is a vector of iid samples from f
+
+`meta: list(truemean = numeric scalar)` #truemean is the true mean (or median) of f
+
+`output: list(meanest=numeric scalar)` #meanest is the estimated mean of f
+
+
+# Scores
+
+Methods are scored based on their mean squared error and their absolute error in estimating the true mean/median.
+See [score.R](score.R).
+
+# To add a method
+
+To add a method there are two steps.
+
+- add a `.R` file containing an R function implenting that method to the `methods/` subdirectory
+- add the method to the list of methods in the `methods.R` file.
+
+Each method function must take arguments `(input,args)` where `input` is a list with the correct format (defined above), and `args` is a list containing any additional arguments the method requires.
+
+Each method function must return `output`, where `output` is a list with the correct format (defined above).
+
+# To add a scenario
+
+To add a scenario there are two steps, the first of which can be skipped if you are using an existing datamaker function
+
+- add a `.R` file containing an R function implenting a datamaker to the `datamakers/` subdirectory
+- add the scenario to the list of scenarios in the `scenarios.R` file.
+
+Each datamaker function must return a `list(meta,input)` where `meta` and `input` are each lists with the correct format
+(defined above).
+
+
+
+
