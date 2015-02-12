@@ -1,6 +1,6 @@
-datamaker = function(seed,args){
+datamaker = function(seed=NULL,args){
 
-  set.seed(seed)
+  if(!is.null(seed)){set.seed(seed)}
   
 
 #meat of function
